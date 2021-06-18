@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditCarWindow</class>
+ <widget class="QDialog" name="EditCarWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>434</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#EditCarWindow
+{
+	color:333;
+}
+
+QLabel#enterIDlbl, QLabel#enterINewName, QLabel#enterINewBrand, QLabel#enterNewPrice, QLabel#enterCarDescription
+{
+	color:white;
+	font-size:12px;
+	background-color:#222;
+	border-radius:4px;
+}
+
+QLabel#changeCarlbl
+{
+	font-size:20px;
+	color:white;
+	background-color:#222;
+	border-radius:4px;
+}
+
+QFrame#frameEditCar
+{
+	background-color:#333;
+}
+
+QPushButton#changeCarButt
+{
+	color:white;
+	background-color:#111;
+}
+
+QPushButton#changeCarButt::hover
+{
+	color:white;
+	background-color:#444;
+}
+
+QTextEdit#TextEditNewDescrpt
+{
+	background-color:#222;
+}
+
+QLineEdit#IDLineEdit, QLineEdit#CarNewNameLineEdit, QLineEdit#CarNewBrandLineEdit, QLineEdit#NewPricelbl
+{
+	background-color:#222;
+}</string>
+  </property>
+  <widget class="QLabel" name="enterIDlbl">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the ID of the car you wish to change :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="IDLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>110</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="enterINewName">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>160</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the Cars new Model Name :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="CarNewNameLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>190</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="enterINewBrand">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>240</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the Cars new Brand Name :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="CarNewBrandLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>270</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="enterNewPrice">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>320</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the Car's new Price :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="NewPricelbl">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>350</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="enterCarDescription">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>400</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the Car's new description :</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="TextEditNewDescrpt">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>430</y>
+     <width>331</width>
+     <height>101</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="changeCarButt">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>570</y>
+     <width>271</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Change Car</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frameEditCar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>441</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="changeCarlbl">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>  Change Car</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>frameEditCar</zorder>
+  <zorder>enterIDlbl</zorder>
+  <zorder>IDLineEdit</zorder>
+  <zorder>enterINewName</zorder>
+  <zorder>CarNewNameLineEdit</zorder>
+  <zorder>enterINewBrand</zorder>
+  <zorder>CarNewBrandLineEdit</zorder>
+  <zorder>enterNewPrice</zorder>
+  <zorder>NewPricelbl</zorder>
+  <zorder>enterCarDescription</zorder>
+  <zorder>TextEditNewDescrpt</zorder>
+  <zorder>changeCarButt</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
