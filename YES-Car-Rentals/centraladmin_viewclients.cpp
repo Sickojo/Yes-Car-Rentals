@@ -3,6 +3,8 @@
 #include "ClientData.h"
 #include <QMouseEvent>
 #include "centraladmin.h"
+#include "deleteclientwindow.h"
+#include "editclientwindow.h"
 
 
 
@@ -73,4 +75,16 @@ void CentralAdmin_ViewClients::on_HomeButton_clicked()
     CentralAdmin *nw = new CentralAdmin(this);
     nw->show();
     hide();
+}
+
+void CentralAdmin_ViewClients::on_DeleteClientButton_clicked()
+{
+    DeleteClientWindow *nw = new DeleteClientWindow(this);
+    nw->show();
+}
+
+void CentralAdmin_ViewClients::on_EditClientButton_clicked()
+{
+    EditClientWindow *nw = new EditClientWindow(this);
+    nw->show();
 }

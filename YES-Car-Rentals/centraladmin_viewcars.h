@@ -24,8 +24,16 @@ private slots:
 
     void on_EditCarButton_clicked();
 
+    void on_DeleteCarButton_clicked();
+
+    void on_HomeButton_clicked();
+
 private:
     Ui::CentralAdmin_ViewCars *ui;
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    int m_nMouseClick_X_Coordinate;
+    int m_nMouseClick_Y_Coordinate;
 };
 
 #endif // CENTRALADMIN_VIEWCARS_H

@@ -24,6 +24,10 @@ private slots:
 
     void on_HomeButton_clicked();
 
+    void on_DeleteClientButton_clicked();
+
+    void on_EditClientButton_clicked();
+
 private:
     Ui::CentralAdmin_ViewClients *ui;
     void mousePressEvent(QMouseEvent *event);

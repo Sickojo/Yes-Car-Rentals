@@ -41,6 +41,8 @@ public:
     QTableWidget *tableWidgetClients;
     QPushButton *LoadClientsButton;
     QLabel *Testlbl;
+    QPushButton *EditClientButton;
+    QPushButton *DeleteClientButton;
 
     void setupUi(QDialog *CentralAdmin_ViewClients)
     {
@@ -181,6 +183,12 @@ public:
         Testlbl->setObjectName(QString::fromUtf8("Testlbl"));
         Testlbl->setGeometry(QRect(270, 95, 271, 21));
         Testlbl->setStyleSheet(QString::fromUtf8("color:black;"));
+        EditClientButton = new QPushButton(frame_2);
+        EditClientButton->setObjectName(QString::fromUtf8("EditClientButton"));
+        EditClientButton->setGeometry(QRect(690, 90, 80, 21));
+        DeleteClientButton = new QPushButton(frame_2);
+        DeleteClientButton->setObjectName(QString::fromUtf8("DeleteClientButton"));
+        DeleteClientButton->setGeometry(QRect(690, 60, 80, 21));
 
         retranslateUi(CentralAdmin_ViewClients);
 
@@ -210,6 +218,8 @@ public:
         ___qtablewidgetitem2->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "AdminStatus", nullptr));
         LoadClientsButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Load Data", nullptr));
         Testlbl->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "...", nullptr));
+        EditClientButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Edit a Client", nullptr));
+        DeleteClientButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Delete a Client", nullptr));
     } // retranslateUi
 
 };

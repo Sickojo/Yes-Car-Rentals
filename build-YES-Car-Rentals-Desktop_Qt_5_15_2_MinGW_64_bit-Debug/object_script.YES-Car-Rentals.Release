@@ -6,7 +6,10 @@ release/central_addcars.o
 release/centraladmin.o
 release/centraladmin_viewcars.o
 release/centraladmin_viewclients.o
+release/deletecarwindow.o
+release/deleteclientwindow.o
 release/editcarwindow.o
+release/editclientwindow.o
 release/logcommand.o
 release/login2.o
 release/loginwindow.o
@@ -20,7 +23,10 @@ release/moc_central_addcars.o
 release/moc_centraladmin.o
 release/moc_centraladmin_viewcars.o
 release/moc_centraladmin_viewclients.o
+release/moc_deletecarwindow.o
+release/moc_deleteclientwindow.o
 release/moc_editcarwindow.o
+release/moc_editclientwindow.o
 release/moc_logcommand.o
 release/moc_login2.o
 release/moc_loginwindow.o

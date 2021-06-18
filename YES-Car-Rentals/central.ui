@@ -265,7 +265,7 @@ QPushButton:hover
 color:black;</string>
     </property>
     <property name="text">
-     <string>Welcome Amr</string>
+     <string/>
     </property>
    </widget>
   </widget>

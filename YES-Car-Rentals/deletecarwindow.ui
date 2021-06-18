@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeleteCarWindow</class>
+ <widget class="QDialog" name="DeleteCarWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>421</width>
+    <height>242</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#DeleteCarWindow
+{
+	color:#333;
+}
+
+QLabel#DltCarId
+{
+	color:white;
+	font-size:12px;
+	background-color:#222;
+	border-radius:4px;
+}
+
+QLabel#DltCarlbl
+{
+	font-size:20px;
+	color:white;
+	background-color:#222;
+	border-radius:4px;
+}
+
+QFrame#framedldcar
+{
+	background-color:#333;
+}
+
+QPushButton#DltCarButton
+{
+	color:white;
+	font-size:11px;
+	background-color:#111;
+}
+
+QPushButton#DltCarButton::hover
+{
+	color:white;
+font-size:11px;
+	background-color:#444;
+}
+
+
+
+QLineEdit#DltCarLineEdit
+{
+	background-color:#222;
+}</string>
+  </property>
+  <widget class="QLabel" name="DltCarId">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>90</y>
+     <width>251</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enter the ID of the car you wish to delete:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="DltCarLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>120</y>
+     <width>113</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DltCarButton">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>180</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Car</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="framedldcar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>431</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="DltCarlbl">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>   Delete a Car</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>framedldcar</zorder>
+  <zorder>DltCarId</zorder>
+  <zorder>DltCarLineEdit</zorder>
+  <zorder>DltCarButton</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

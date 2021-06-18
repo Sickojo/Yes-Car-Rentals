@@ -17,7 +17,10 @@ SOURCES += \
     centraladmin.cpp \
     centraladmin_viewcars.cpp \
     centraladmin_viewclients.cpp \
+    deletecarwindow.cpp \
+    deleteclientwindow.cpp \
     editcarwindow.cpp \
+    editclientwindow.cpp \
     logcommand.cpp \
     login2.cpp \
     loginwindow.cpp \
@@ -35,7 +38,10 @@ HEADERS += \
     centraladmin.h \
     centraladmin_viewcars.h \
     centraladmin_viewclients.h \
+    deletecarwindow.h \
+    deleteclientwindow.h \
     editcarwindow.h \
+    editclientwindow.h \
     logcommand.h \
     login2.h \
     loginwindow.h \
@@ -49,7 +55,10 @@ FORMS += \
     centraladmin.ui \
     centraladmin_viewcars.ui \
     centraladmin_viewclients.ui \
+    deletecarwindow.ui \
+    deleteclientwindow.ui \
     editcarwindow.ui \
+    editclientwindow.ui \
     logcommand.ui \
     login2.ui \
     loginwindow.ui \

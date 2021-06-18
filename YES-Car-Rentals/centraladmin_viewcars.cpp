@@ -3,6 +3,8 @@
 #include "centraladmin.h"
 #include "CarsData.h"
 #include "editcarwindow.h"
+#include "deletecarwindow.h"
+#include "QMouseEvent"
 
 CentralAdmin_ViewCars::CentralAdmin_ViewCars(QWidget *parent) :
     QDialog(parent),
@@ -20,12 +22,18 @@ CentralAdmin_ViewCars::~CentralAdmin_ViewCars()
 {
     delete ui;
 }
+void CentralAdmin_ViewCars::mousePressEvent(QMouseEvent *event) {
+    m_nMouseClick_X_Coordinate = event->x();
+    m_nMouseClick_Y_Coordinate = event->y();
+}
+
+void CentralAdmin_ViewCars::mouseMoveEvent(QMouseEvent *event) {
+    move(event->globalX()-m_nMouseClick_X_Coordinate,event->globalY()-m_nMouseClick_Y_Coordinate);
+}
 
 void CentralAdmin_ViewCars::on_AddCars_clicked()
 {
-    CentralAdmin *nw = new CentralAdmin(this);
-    nw->show();
-    hide();
+
 }
 
 void CentralAdmin_ViewCars::on_Close_clicked()
@@ -57,4 +65,17 @@ void CentralAdmin_ViewCars::on_EditCarButton_clicked()
 {
     EditCarWindow *nw = new EditCarWindow(this);
     nw->show();
+}
+
+void CentralAdmin_ViewCars::on_DeleteCarButton_clicked()
+{
+    DeleteCarWindow *nw = new DeleteCarWindow(this);
+    nw->show();
+}
+
+void CentralAdmin_ViewCars::on_HomeButton_clicked()
+{
+    CentralAdmin *nw = new CentralAdmin(this);
+    nw->show();
+    hide();
 }

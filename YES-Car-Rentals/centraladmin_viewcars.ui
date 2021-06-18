@@ -362,6 +362,19 @@ QPushButton:hover
      <string>Edit a car</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="DeleteCarButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>70</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete a car</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

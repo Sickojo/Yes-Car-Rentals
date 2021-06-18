@@ -42,6 +42,7 @@ public:
     QPushButton *LoadClientsButton;
     QLabel *Testlbl;
     QPushButton *EditCarButton;
+    QPushButton *DeleteCarButton;
 
     void setupUi(QDialog *CentralAdmin_ViewCars)
     {
@@ -187,6 +188,9 @@ public:
         EditCarButton = new QPushButton(frame_2);
         EditCarButton->setObjectName(QString::fromUtf8("EditCarButton"));
         EditCarButton->setGeometry(QRect(680, 100, 80, 21));
+        DeleteCarButton = new QPushButton(frame_2);
+        DeleteCarButton->setObjectName(QString::fromUtf8("DeleteCarButton"));
+        DeleteCarButton->setGeometry(QRect(680, 70, 80, 21));
 
         retranslateUi(CentralAdmin_ViewCars);
 
@@ -219,6 +223,7 @@ public:
         LoadClientsButton->setText(QCoreApplication::translate("CentralAdmin_ViewCars", "Load Data", nullptr));
         Testlbl->setText(QCoreApplication::translate("CentralAdmin_ViewCars", "...", nullptr));
         EditCarButton->setText(QCoreApplication::translate("CentralAdmin_ViewCars", "Edit a car", nullptr));
+        DeleteCarButton->setText(QCoreApplication::translate("CentralAdmin_ViewCars", "Delete a car", nullptr));
     } // retranslateUi
 
 };

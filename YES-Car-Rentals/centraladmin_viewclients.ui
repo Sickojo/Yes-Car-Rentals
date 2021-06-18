@@ -344,6 +344,32 @@ QPushButton:hover
      <string>...</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="EditClientButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>90</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit a Client</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeleteClientButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>60</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete a Client</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

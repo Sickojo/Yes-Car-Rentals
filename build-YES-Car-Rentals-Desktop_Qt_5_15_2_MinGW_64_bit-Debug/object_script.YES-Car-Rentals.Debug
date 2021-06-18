@@ -6,7 +6,10 @@ debug/central_addcars.o
 debug/centraladmin.o
 debug/centraladmin_viewcars.o
 debug/centraladmin_viewclients.o
+debug/deletecarwindow.o
+debug/deleteclientwindow.o
 debug/editcarwindow.o
+debug/editclientwindow.o
 debug/logcommand.o
 debug/login2.o
 debug/loginwindow.o
@@ -20,7 +23,10 @@ debug/moc_central_addcars.o
 debug/moc_centraladmin.o
 debug/moc_centraladmin_viewcars.o
 debug/moc_centraladmin_viewclients.o
+debug/moc_deletecarwindow.o
+debug/moc_deleteclientwindow.o
 debug/moc_editcarwindow.o
+debug/moc_editclientwindow.o
 debug/moc_logcommand.o
 debug/moc_login2.o
 debug/moc_loginwindow.o

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditClientWindow</class>
+ <widget class="QDialog" name="EditClientWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>434</width>
+    <height>422</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#EditCarWindow
+{
+        color:333;
+}
+
+QLabel#enterIDlbl, QLabel#enterINewName, QLabel#enterINewBrand, QLabel#enterNewPrice, QLabel#enterCarDescription, QLabel#enterINewName_2
+{
+        color:white;
+        font-size:12px;
+        background-color:#222;
+        border-radius:4px;
+}
+
+QLabel#changeCarlbl
+{
+        font-size:20px;
+        color:white;
+        background-color:#222;
+        border-radius:4px;
+}
+
+QFrame#frameEditCar
+{
+        background-color:#333;
+}
+
+QPushButton#changeCarButt
+{
+        color:white;
+	font-size:11px;
+        background-color:#111;
+}
+
+QPushButton#changeCarButt::hover
+{
+        color:white;
+font-size:11px;
+        background-color:#444;
+}
+
+QTextEdit#TextEditNewDescrpt
+{
+        background-color:#222;
+}
+
+QLineEdit#IDLineEdit, QLineEdit#CarNewNameLineEdit, QLineEdit#CarNewBrandLineEdit, QLineEdit#NewPricelbl
+{
+        background-color:#222;
+}
+
+QRadioButton
+{
+	font-size:12px;
+}</string>
+  </property>
+  <widget class="QLabel" name="enterIDlbl">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the ID of the Client you wish to change :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="IDLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>110</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="enterINewName">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>160</y>
+     <width>211</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>  Enter the new name of the Client :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="CarNewNameLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>190</y>
+     <width>301</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frameEditCar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>441</width>
+     <height>621</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="changeCarlbl">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>20</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>  Change Client</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rb1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>260</y>
+      <width>191</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Make Admin</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="changeCarButt">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>320</y>
+      <width>271</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Change Client</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="enterINewName_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>230</y>
+      <width>291</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Choose wether or not to make this Client an Admin</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="rb2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>260</y>
+      <width>191</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Make Client</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>frameEditCar</zorder>
+  <zorder>enterIDlbl</zorder>
+  <zorder>IDLineEdit</zorder>
+  <zorder>enterINewName</zorder>
+  <zorder>CarNewNameLineEdit</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

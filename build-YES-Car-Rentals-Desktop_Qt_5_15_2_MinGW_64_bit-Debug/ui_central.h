@@ -160,7 +160,7 @@ public:
         label_2->setText(QString());
         pushButton_4->setText(QString());
         label_4->setText(QString());
-        WelcomeLbl->setText(QCoreApplication::translate("Central", "Welcome Amr", nullptr));
+        WelcomeLbl->setText(QString());
     } // retranslateUi
 
 };
