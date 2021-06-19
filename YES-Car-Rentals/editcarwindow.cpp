@@ -60,12 +60,12 @@ void EditCarWindow::on_changeCarButt_clicked()
               }
               if(ui->CarNewBrandLineEdit->text().toStdString().length() != 0)
               {
-                  strcpy(tmp.name, ui->CarNewBrandLineEdit->text().toStdString().c_str());
+                  strcpy(tmp.brand, ui->CarNewBrandLineEdit->text().toStdString().c_str());
               }
 
               if(ui->TextEditNewDescrpt->toPlainText().toStdString().length() != 0)
               {
-                  strcpy(tmp.name, ui->TextEditNewDescrpt->toPlainText().toStdString().c_str());
+                  strcpy(tmp.Discript, ui->TextEditNewDescrpt->toPlainText().toStdString().c_str());
               }
 
               if(ui->NewPricelbl->text().toInt() != 0)
@@ -83,7 +83,5 @@ void EditCarWindow::on_changeCarButt_clicked()
         }
          f.close();
     }
-
-
 
 }

@@ -2,6 +2,7 @@
 #include "ui_central.h"
 #include <QMouseEvent>
 #include "ClientData.h"
+#include "central_viewcars1.h"
 
 Central::Central(QWidget *parent) :
     QDialog(parent),
@@ -43,3 +44,10 @@ void Central::on_pushButton_4_clicked()
 
 
 
+
+void Central::on_RentCar_clicked()
+{
+    central_viewcars1 *nw = new central_viewcars1(this);
+    nw->show();
+    hide();
+}

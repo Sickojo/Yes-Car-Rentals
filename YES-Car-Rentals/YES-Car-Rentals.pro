@@ -14,6 +14,7 @@ SOURCES += \
     central.cpp \
     central2.cpp \
     central_addcars.cpp \
+    central_viewcars1.cpp \
     centraladmin.cpp \
     centraladmin_viewcars.cpp \
     centraladmin_viewclients.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     central.h \
     central2.h \
     central_addcars.h \
+    central_viewcars1.h \
     centraladmin.h \
     centraladmin_viewcars.h \
     centraladmin_viewclients.h \
@@ -52,6 +54,7 @@ FORMS += \
     central.ui \
     central2.ui \
     central_addcars.ui \
+    central_viewcars1.ui \
     centraladmin.ui \
     centraladmin_viewcars.ui \
     centraladmin_viewclients.ui \

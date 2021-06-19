@@ -3,6 +3,7 @@ release/DataFuncs.o
 release/central.o
 release/central2.o
 release/central_addcars.o
+release/central_viewcars1.o
 release/centraladmin.o
 release/centraladmin_viewcars.o
 release/centraladmin_viewclients.o
@@ -20,6 +21,7 @@ release/qrc_Resources.o
 release/moc_central.o
 release/moc_central2.o
 release/moc_central_addcars.o
+release/moc_central_viewcars1.o
 release/moc_centraladmin.o
 release/moc_centraladmin_viewcars.o
 release/moc_centraladmin_viewclients.o

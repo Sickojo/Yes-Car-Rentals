@@ -108,7 +108,7 @@ void Central_AddCars::on_AddCarButton_clicked()
         fstream f(Cars, ios::in | ios::out | ios::binary);
         ofstream file(Cars, ios::binary | ios::app);
         Car tmp;
-        int idcounter = 1;
+        int idcounter = 1, idcounter2;
         bool Can_Add = true;
         string input;
         while(f.read((char *)&tmp, sizeof (tmp)))
@@ -131,12 +131,13 @@ void Central_AddCars::on_AddCarButton_clicked()
               }
 
         idcounter ++;
+        idcounter2 = tmp.id;
         }
 
 
         if(Can_Add)
         {
-            car.id = idcounter;
+            car.id = ++idcounter2;
             file.write((char* )&car, sizeof(car));
             ui->WarningLbl->setText("Successfuly added car");
         }

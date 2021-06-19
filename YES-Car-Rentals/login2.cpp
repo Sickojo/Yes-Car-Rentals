@@ -43,13 +43,7 @@ void Login2::on_pushButton_clicked()
 
     if(Login1(username, password))
     {
-//        MainWindow *nw = new MainWindow(this);
-//        nw->show();
-
-//        Central *nw = new Central(this);
-//        nw->show();
-//        hide();
-        CentralAdmin *nw = new CentralAdmin(this);
+        Central *nw = new Central(this);
         nw->show();
         hide();
 
