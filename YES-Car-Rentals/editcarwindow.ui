@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit Car</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/res/data/icons/edit.webp</normaloff>:/res/data/icons/edit.webp</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#EditCarWindow
@@ -44,11 +48,14 @@ QPushButton#changeCarButt
 {
 	color:white;
 	background-color:#111;
+	font-size:13px;
+
 }
 
 QPushButton#changeCarButt::hover
 {
 	color:white;
+	font-size:13px;
 	background-color:#444;
 }
 
@@ -208,7 +215,7 @@ QLineEdit#IDLineEdit, QLineEdit#CarNewNameLineEdit, QLineEdit#CarNewBrandLineEdi
    <widget class="QLabel" name="changeCarlbl">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>130</x>
       <y>20</y>
       <width>131</width>
       <height>31</height>
@@ -216,6 +223,26 @@ QLineEdit#IDLineEdit, QLineEdit#CarNewNameLineEdit, QLineEdit#CarNewBrandLineEdi
     </property>
     <property name="text">
      <string>  Change Car</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>40</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	font-size:10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Leave blank if unchanged</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -232,6 +259,8 @@ QLineEdit#IDLineEdit, QLineEdit#CarNewNameLineEdit, QLineEdit#CarNewBrandLineEdi
   <zorder>TextEditNewDescrpt</zorder>
   <zorder>changeCarButt</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

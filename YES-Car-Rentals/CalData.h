@@ -7,11 +7,14 @@
 #include <algorithm>
 
 using namespace std;
-
+extern string currentItem;
+extern int currentDayStart, currentNumOfDays, currentMonth;
 class Cal
 {
 public:
     int Month, DayStart, NumOfDays, ClientId, CarId;
+    bool IsAccepted;
+
 
 
 
@@ -21,6 +24,7 @@ public:
 
     void print_table();
     bool CompareCals(Cal cal);
+
 
 
 };

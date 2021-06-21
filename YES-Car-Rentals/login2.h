@@ -21,7 +21,6 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_pushButtonSI_clicked();
 
 private:
     Ui::Login2 *ui;

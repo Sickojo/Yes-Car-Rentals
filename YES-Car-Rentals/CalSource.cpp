@@ -1,6 +1,7 @@
 #include "CalData.h"
 
-
+string currentItem;
+int currentDayStart, currentNumOfDays, currentMonth;
 
 
 Cal::Cal (int _Month, int _DayStart, int _NumOfDays, int _CarId, int _ClientId)
@@ -10,14 +11,16 @@ Cal::Cal (int _Month, int _DayStart, int _NumOfDays, int _CarId, int _ClientId)
     NumOfDays = _NumOfDays;
     ClientId = _ClientId;
     CarId = _CarId;
+    IsAccepted = false;
+
 
 
 }
 
 void Cal::print_table()
-    {
-        cout << "From Day : " << DayStart << ", Number of days " << NumOfDays << ", Month : " << Month << ", Car :" << CarId << ", Client : " << ClientId << endl;
-    }
+{
+    cout << "From Day : " << DayStart << ", Number of days " << NumOfDays << ", Month : " << Month << ", Car :" << CarId << ", Client : " << ClientId << endl;
+}
 
 bool Cal::CompareCals(Cal cal)
 {
@@ -74,24 +77,24 @@ bool Change(int Month, int DayStart, int NumOfDays, int Carid, int Clientid)
 
     while(f.read((char *)&tmp, sizeof (tmp)))
     {
-          if(tmp.CarId == Carid && tmp.ClientId == Clientid)
-         {
-          Is_found == true;
+        if(tmp.CarId == Carid && tmp.ClientId == Clientid)
+        {
 
-          tmp.DayStart = DayStart;
-          tmp.NumOfDays = NumOfDays;
-          tmp.Month = Month;
-
+            tmp.DayStart = DayStart;
+            tmp.NumOfDays = NumOfDays;
+            tmp.Month = Month;
 
 
-          f.seekp((int)f.tellg() - sizeof(tmp), ios::beg);
 
-          f.write((char * ) &tmp, sizeof(tmp));
+            f.seekp((int)f.tellg() - sizeof(tmp), ios::beg);
 
-          break;
-         }
+            f.write((char * ) &tmp, sizeof(tmp));
+            Is_found = true;
+
+            break;
+        }
     }
-       return Is_found;
+    return Is_found;
 
 }
 
@@ -148,7 +151,6 @@ vector<pair<int, int>> GetDays(int DayStart, int NumOfDays, int Month)
     {
         int SumDaysMonth = DayStart + NumOfDays;
         int DaysInOtherMonth = SumDaysMonth - DaysOfMonth;
-        int DaysInCurrentMonth = NumOfDays - DaysInOtherMonth;
         int Month2;
         if(Month != 12)
             Month2 = Month + 1;
@@ -172,14 +174,13 @@ vector<pair<int, int>> GetDays(int DayStart, int NumOfDays, int Month)
 
 void Delete(int Carid, int Clientid, int DayStart, int Month)
 {
-    bool Is_Found = false;
     ifstream f("tsti.bin", ios::binary);
     ofstream temp("temp.bin", ios::binary);
     Cal tmp;
     while(f.read((char *)&tmp, sizeof (tmp)))
     {
-          if(tmp.CarId != Carid && tmp.ClientId != Clientid && tmp.Month != Month && tmp.DayStart != DayStart)
-          temp.write((char* ) &tmp, sizeof(tmp));
+        if(tmp.CarId != Carid && tmp.ClientId != Clientid && tmp.Month != Month && tmp.DayStart != DayStart)
+            temp.write((char* ) &tmp, sizeof(tmp));
 
     }
     f.close();

@@ -10,6 +10,7 @@
 #define UI_EDITCARWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -36,12 +37,16 @@ public:
     QPushButton *changeCarButt;
     QFrame *frameEditCar;
     QLabel *changeCarlbl;
+    QLabel *label;
 
     void setupUi(QDialog *EditCarWindow)
     {
         if (EditCarWindow->objectName().isEmpty())
             EditCarWindow->setObjectName(QString::fromUtf8("EditCarWindow"));
         EditCarWindow->resize(434, 616);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/icons/edit.webp"), QSize(), QIcon::Normal, QIcon::Off);
+        EditCarWindow->setWindowIcon(icon);
         EditCarWindow->setStyleSheet(QString::fromUtf8("QDialog#EditCarWindow\n"
 "{\n"
 "	color:333;\n"
@@ -72,11 +77,14 @@ public:
 "{\n"
 "	color:white;\n"
 "	background-color:#111;\n"
+"	font-size:13px;\n"
+"\n"
 "}\n"
 "\n"
 "QPushButton#changeCarButt::hover\n"
 "{\n"
 "	color:white;\n"
+"	font-size:13px;\n"
 "	background-color:#444;\n"
 "}\n"
 "\n"
@@ -129,7 +137,13 @@ public:
         frameEditCar->setFrameShadow(QFrame::Raised);
         changeCarlbl = new QLabel(frameEditCar);
         changeCarlbl->setObjectName(QString::fromUtf8("changeCarlbl"));
-        changeCarlbl->setGeometry(QRect(150, 20, 131, 31));
+        changeCarlbl->setGeometry(QRect(130, 20, 131, 31));
+        label = new QLabel(frameEditCar);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(130, 40, 121, 41));
+        label->setStyleSheet(QString::fromUtf8("	font-size:10px;\n"
+""));
+        label->setScaledContents(true);
         frameEditCar->raise();
         enterIDlbl->raise();
         IDLineEdit->raise();
@@ -150,7 +164,7 @@ public:
 
     void retranslateUi(QDialog *EditCarWindow)
     {
-        EditCarWindow->setWindowTitle(QCoreApplication::translate("EditCarWindow", "Dialog", nullptr));
+        EditCarWindow->setWindowTitle(QCoreApplication::translate("EditCarWindow", "Edit Car", nullptr));
         enterIDlbl->setText(QCoreApplication::translate("EditCarWindow", "  Enter the ID of the car you wish to change :", nullptr));
         enterINewName->setText(QCoreApplication::translate("EditCarWindow", "  Enter the Cars new Model Name :", nullptr));
         enterINewBrand->setText(QCoreApplication::translate("EditCarWindow", "  Enter the Cars new Brand Name :", nullptr));
@@ -158,6 +172,7 @@ public:
         enterCarDescription->setText(QCoreApplication::translate("EditCarWindow", "  Enter the Car's new description :", nullptr));
         changeCarButt->setText(QCoreApplication::translate("EditCarWindow", "Change Car", nullptr));
         changeCarlbl->setText(QCoreApplication::translate("EditCarWindow", "  Change Car", nullptr));
+        label->setText(QCoreApplication::translate("EditCarWindow", "Leave blank if unchanged", nullptr));
     } // retranslateUi
 
 };

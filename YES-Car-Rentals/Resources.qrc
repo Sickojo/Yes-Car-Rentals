@@ -1,2 +1,25 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/res">
+        <file>data/icons/cancel.png</file>
+        <file>data/icons/home.png</file>
+        <file>data/icons/sports-car.png</file>
+        <file>data/images/Car_Background_Login_00.png</file>
+        <file>data/images/Loko.png</file>
+        <file>data/icons/add.png</file>
+        <file>data/icons/delete.png</file>
+        <file>data/icons/edit.webp</file>
+        <file>data/icons/rentals.png</file>
+        <file>data/icons/Acc.png</file>
+        <file>data/icons/whiteRent.png</file>
+        <file>data/icons/whiteRentals.png</file>
+        <file>data/icons/cars.jpg</file>
+        <file>data/icons/clients.png</file>
+        <file>data/assets/Dodge_charger.jpg</file>
+        <file>data/assets/Lambo.jpg</file>
+        <file>data/assets/muscle.jpg</file>
+        <file>data/assets/muscle_2.jpg</file>
+        <file>data/assets/sports.jpg</file>
+        <file>data/assets/SUV.jpg</file>
+        <file>data/images/Comp_1.gif</file>
+    </qresource>
+</RCC>

@@ -9,6 +9,8 @@ EditClientWindow::EditClientWindow(QWidget *parent) :
     ui(new Ui::EditClientWindow)
 {
     ui->setupUi(this);
+    setWindowFlag(Qt::WindowContextHelpButtonHint,false);
+
 }
 
 EditClientWindow::~EditClientWindow()
@@ -19,33 +21,15 @@ EditClientWindow::~EditClientWindow()
 void EditClientWindow::on_changeCarButt_clicked()
 {
     bool IsOk = true;
-//    if(ui->IDLineEdit->text().toInt() <= 0)
-//    {
-//        IsOk = false;
-//    }
-//    if(ui->CarNewNameLineEdit->text().toStdString().length() < 2)
-//    {
-//        IsOk = false;
-//        //ui->BrandWarning->setText("Too Short");
-//    }
-
-//    if(ui->CarNewBrandLineEdit->text().toStdString().length() < 2)
-//    {
-//        IsOk = false;
-//        //ui->ModelWarning->setText("Too short");
-//    }
-
-//    if(ui->TextEditNewDescrpt->toPlainText().toStdString().length() < 20)
-//    {
-//        IsOk = false;
-//        //ui->DescriptWarning->setText("Too Short");
-//    }
-
-//    if(ui->NewPricelbl->text().toInt() < 15)
-//    {
-//        IsOk = false;
-//        //ui->PriceWarning->setText("Too Low");
-//    }
+        if(ui->IDLineEdit->text().toInt() <= 0)
+        {
+            IsOk = false;
+        }
+        if(ui->CarNewNameLineEdit->text().toStdString().length() < 2)
+        {
+            IsOk = false;
+            ui->label->setText("Too Short");
+        }
 
     if(IsOk)
     {
@@ -54,25 +38,25 @@ void EditClientWindow::on_changeCarButt_clicked()
 
         while(f.read((char *)&tmp, sizeof (tmp)))
         {
-              if(tmp.id == ui->IDLineEdit->text().toInt())
-             {
-              if(ui->CarNewNameLineEdit->text().toStdString().length() != 0)
-              {
-                  strcpy(tmp.name, ui->CarNewNameLineEdit->text().toStdString().c_str());
-              }
-              if(IsAdm == true || IsAdm == false)
-                  tmp.Is_Admin = IsAdm;
+            if(tmp.id == ui->IDLineEdit->text().toInt())
+            {
+                if(ui->CarNewNameLineEdit->text().toStdString().length() != 0)
+                {
+                    qstrcpy(tmp.name, ui->CarNewNameLineEdit->text().toStdString().c_str());
+                }
+                if(IsAdm == true || IsAdm == false)
+                    tmp.Is_Admin = IsAdm;
 
 
 
-              f.seekp((int)f.tellg() - sizeof(tmp), ios::beg);
+                f.seekp((int)f.tellg() - sizeof(tmp), ios::beg);
 
-              f.write((char * ) &tmp, sizeof(tmp));
+                f.write((char * ) &tmp, sizeof(tmp));
 
-              break;
-             }
+                break;
+            }
         }
-         f.close();
+        f.close();
     }
 }
 

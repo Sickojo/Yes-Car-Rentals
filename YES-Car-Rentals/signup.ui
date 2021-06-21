@@ -11,20 +11,25 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Sign-up</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/res/data/images/Loko.png</normaloff>:/res/data/images/Loko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
         font-family:century gothic;
         font-size:24px;
         color:white;
-        background:url(L:/UNI/Projects/Project one/Grind/Project/QT/data/images/Car_Background_Login_00.png);
+	background-image: url(:/res/data/images/Car_Background_Login_00.png);
 }
 
 QFrame
 {
         background:#333;
         border-radius:20px;
+
 }
 
 
@@ -76,7 +81,7 @@ QLineEdit
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>150</x>
       <y>20</y>
       <width>141</width>
       <height>51</height>
@@ -124,8 +129,14 @@ QLineEdit
       <height>31</height>
      </rect>
     </property>
+    <property name="inputMask">
+     <string/>
+    </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
     </property>
     <property name="placeholderText">
      <string>Password</string>
@@ -161,9 +172,14 @@ font-size:12px;
     <property name="text">
      <string/>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

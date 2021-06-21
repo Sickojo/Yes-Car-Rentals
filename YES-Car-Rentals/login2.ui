@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Log-In</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/res/data/images/Loko.png</normaloff>:/res/data/images/Loko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -23,7 +27,8 @@
 
 QDialog#Login2
 {
-	 background:url(L:/UNI/Projects/Project one/Grind/Project/QT/data/images/Car_Background_Login_00.png);
+
+	background-image: url(:/res/data/images/Car_Background_Login_00.png);
 }
 
 QFrame#frame23
@@ -146,6 +151,9 @@ QLineEdit
     <property name="text">
      <string/>
     </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
     <property name="placeholderText">
      <string>Password</string>
     </property>
@@ -180,9 +188,17 @@ font-size:12px;
     <property name="text">
      <string/>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

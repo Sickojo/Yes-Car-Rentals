@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CentralAdmin_ViewClients_t {
-    QByteArrayData data[8];
-    char stringdata0[174];
+    QByteArrayData data[12];
+    char stringdata0[250];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,14 +39,20 @@ QT_MOC_LITERAL(3, 48, 16), // "on_Close_clicked"
 QT_MOC_LITERAL(4, 65, 28), // "on_LoadClientsButton_clicked"
 QT_MOC_LITERAL(5, 94, 21), // "on_HomeButton_clicked"
 QT_MOC_LITERAL(6, 116, 29), // "on_DeleteClientButton_clicked"
-QT_MOC_LITERAL(7, 146, 27) // "on_EditClientButton_clicked"
+QT_MOC_LITERAL(7, 146, 27), // "on_EditClientButton_clicked"
+QT_MOC_LITERAL(8, 174, 18), // "on_AddCars_clicked"
+QT_MOC_LITERAL(9, 193, 19), // "on_EditCars_clicked"
+QT_MOC_LITERAL(10, 213, 18), // "on_signout_clicked"
+QT_MOC_LITERAL(11, 232, 17) // "on_Rental_clicked"
 
     },
     "CentralAdmin_ViewClients\0on_pushButton_clicked\0"
     "\0on_Close_clicked\0on_LoadClientsButton_clicked\0"
     "on_HomeButton_clicked\0"
     "on_DeleteClientButton_clicked\0"
-    "on_EditClientButton_clicked"
+    "on_EditClientButton_clicked\0"
+    "on_AddCars_clicked\0on_EditCars_clicked\0"
+    "on_signout_clicked\0on_Rental_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +62,7 @@ static const uint qt_meta_data_CentralAdmin_ViewClients[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,14 +70,22 @@ static const uint qt_meta_data_CentralAdmin_ViewClients[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   44,    2, 0x08 /* Private */,
-       3,    0,   45,    2, 0x08 /* Private */,
-       4,    0,   46,    2, 0x08 /* Private */,
-       5,    0,   47,    2, 0x08 /* Private */,
-       6,    0,   48,    2, 0x08 /* Private */,
-       7,    0,   49,    2, 0x08 /* Private */,
+       1,    0,   64,    2, 0x08 /* Private */,
+       3,    0,   65,    2, 0x08 /* Private */,
+       4,    0,   66,    2, 0x08 /* Private */,
+       5,    0,   67,    2, 0x08 /* Private */,
+       6,    0,   68,    2, 0x08 /* Private */,
+       7,    0,   69,    2, 0x08 /* Private */,
+       8,    0,   70,    2, 0x08 /* Private */,
+       9,    0,   71,    2, 0x08 /* Private */,
+      10,    0,   72,    2, 0x08 /* Private */,
+      11,    0,   73,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -94,6 +108,10 @@ void CentralAdmin_ViewClients::qt_static_metacall(QObject *_o, QMetaObject::Call
         case 3: _t->on_HomeButton_clicked(); break;
         case 4: _t->on_DeleteClientButton_clicked(); break;
         case 5: _t->on_EditClientButton_clicked(); break;
+        case 6: _t->on_AddCars_clicked(); break;
+        case 7: _t->on_EditCars_clicked(); break;
+        case 8: _t->on_signout_clicked(); break;
+        case 9: _t->on_Rental_clicked(); break;
         default: ;
         }
     }
@@ -129,13 +147,13 @@ int CentralAdmin_ViewClients::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 6;
+        _id -= 10;
     }
     return _id;
 }

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Delete Client</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/res/data/icons/clients.png</normaloff>:/res/data/icons/clients.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#DeleteCarWindow
@@ -131,6 +135,8 @@ QLineEdit#DltCarLineEdit
   <zorder>DltCarLineEdit</zorder>
   <zorder>DltCarButton</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

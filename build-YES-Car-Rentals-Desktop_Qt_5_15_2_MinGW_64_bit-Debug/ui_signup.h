@@ -10,6 +10,7 @@
 #define UI_SIGNUP_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -35,17 +36,21 @@ public:
         if (signup->objectName().isEmpty())
             signup->setObjectName(QString::fromUtf8("signup"));
         signup->resize(496, 601);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/images/Loko.png"), QSize(), QIcon::Normal, QIcon::Off);
+        signup->setWindowIcon(icon);
         signup->setStyleSheet(QString::fromUtf8("*{\n"
 "        font-family:century gothic;\n"
 "        font-size:24px;\n"
 "        color:white;\n"
-"        background:url(L:/UNI/Projects/Project one/Grind/Project/QT/data/images/Car_Background_Login_00.png);\n"
+"	background-image: url(:/res/data/images/Car_Background_Login_00.png);\n"
 "}\n"
 "\n"
 "QFrame\n"
 "{\n"
 "        background:#333;\n"
 "        border-radius:20px;\n"
+"\n"
 "}\n"
 "\n"
 "\n"
@@ -85,7 +90,7 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(170, 20, 141, 51));
+        label->setGeometry(QRect(150, 20, 141, 51));
         pushButton = new QPushButton(frame);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(50, 430, 311, 41));
@@ -95,6 +100,7 @@ public:
         lineEdit_2 = new QLineEdit(frame);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(80, 260, 261, 31));
+        lineEdit_2->setEchoMode(QLineEdit::Password);
         pushButton_2 = new QPushButton(frame);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(60, 360, 301, 21));
@@ -104,6 +110,7 @@ public:
         label_2 = new QLabel(frame);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(80, 90, 251, 51));
+        label_2->setAlignment(Qt::AlignCenter);
 
         retranslateUi(signup);
 
@@ -112,11 +119,12 @@ public:
 
     void retranslateUi(QDialog *signup)
     {
-        signup->setWindowTitle(QCoreApplication::translate("signup", "Dialog", nullptr));
+        signup->setWindowTitle(QCoreApplication::translate("signup", "Sign-up", nullptr));
         label->setText(QCoreApplication::translate("signup", "Sign Up", nullptr));
         pushButton->setText(QCoreApplication::translate("signup", "Sign Up", nullptr));
         lineEdit->setText(QString());
         lineEdit->setPlaceholderText(QCoreApplication::translate("signup", "Username", nullptr));
+        lineEdit_2->setInputMask(QString());
         lineEdit_2->setText(QString());
         lineEdit_2->setPlaceholderText(QCoreApplication::translate("signup", "Password", nullptr));
         pushButton_2->setText(QCoreApplication::translate("signup", "If you already have nad account, click here to sign in.", nullptr));

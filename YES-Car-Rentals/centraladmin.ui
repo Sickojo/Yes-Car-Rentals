@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Admin Home</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/res/data/images/Loko.png</normaloff>:/res/data/images/Loko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -38,7 +42,7 @@ QPushButton
         color:#ffffff;
 }
 
-QPushButton#HomeButton:hover, QPushButton#AddCars:hover,  QPushButton#EditCars:hover, QPushButton#MyAccount:hover, QPushButton#ViewClients:hover
+QPushButton#HomeButton:hover, QPushButton#AddCars:hover,  QPushButton#EditCars:hover, QPushButton#MyAccount:hover, QPushButton#ViewClients:hover,QPushButton#Rental:hover,QPushButton#signout:hover
 {
         font-size:15px;
         background:#222;
@@ -62,8 +66,8 @@ QToolButton
      <rect>
       <x>0</x>
       <y>90</y>
-      <width>20</width>
-      <height>37</height>
+      <width>19</width>
+      <height>35</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -96,36 +100,7 @@ QToolButton
      </rect>
     </property>
     <property name="text">
-     <string>View Cars</string>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="toolButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>580</y>
-      <width>26</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>...</string>
-    </property>
-   </widget>
-   <widget class="QToolButton" name="toolButton_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>31</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image:url(L:/UNI/Projects/Project one/Grind/Project/QT/data/icons/home.png)0 0 0 0 stretch stretch;</string>
-    </property>
-    <property name="text">
-     <string/>
+     <string>Edit Cars</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -133,8 +108,8 @@ QToolButton
      <rect>
       <x>20</x>
       <y>90</y>
-      <width>41</width>
-      <height>31</height>
+      <width>35</width>
+      <height>35</height>
      </rect>
     </property>
     <property name="text">
@@ -158,7 +133,7 @@ QToolButton
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>410</y>
+      <y>490</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -180,15 +155,114 @@ QToolButton
      <string>View Clients</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="Rental">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>410</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Rentals Requests</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>35</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>35</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>35</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>410</y>
+      <width>35</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>35</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="signout">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>590</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>sign out</string>
+    </property>
+   </widget>
    <zorder>AddCars</zorder>
    <zorder>EditCars</zorder>
-   <zorder>toolButton</zorder>
-   <zorder>toolButton_2</zorder>
    <zorder>HomeButton</zorder>
-   <zorder>label</zorder>
    <zorder>label_3</zorder>
    <zorder>MyAccount</zorder>
    <zorder>ViewClients</zorder>
+   <zorder>Rental</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label</zorder>
+   <zorder>signout</zorder>
   </widget>
   <widget class="QFrame" name="frame_2">
    <property name="geometry">
@@ -279,7 +353,7 @@ QPushButton:hover
 color:black;</string>
     </property>
     <property name="text">
-     <string>Welcome Amr</string>
+     <string/>
     </property>
    </widget>
   </widget>

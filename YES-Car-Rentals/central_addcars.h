@@ -24,6 +24,14 @@ private slots:
 
     void on_AddCarButton_clicked();
 
+    void on_EditCars_clicked();
+
+    void on_ViewClients_clicked();
+
+    void on_signout_clicked();
+
+    void on_Rental_clicked();
+
 private:
     Ui::Central_AddCars *ui;
     void mousePressEvent(QMouseEvent *event);

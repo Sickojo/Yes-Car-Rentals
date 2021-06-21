@@ -34,6 +34,11 @@ public:
 
 
 void Create(string Filename, Car newCar);
+Car FindCar(int ID);
+Car FindCar(string CarName);
+extern Car SelectedCar;
+extern string currentCarName;
+
 
 
 

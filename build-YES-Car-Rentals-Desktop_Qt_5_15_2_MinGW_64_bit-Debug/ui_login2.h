@@ -10,6 +10,7 @@
 #define UI_LOGIN2_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -35,6 +36,9 @@ public:
         if (Login2->objectName().isEmpty())
             Login2->setObjectName(QString::fromUtf8("Login2"));
         Login2->resize(496, 618);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/images/Loko.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Login2->setWindowIcon(icon);
         Login2->setStyleSheet(QString::fromUtf8("*{\n"
 "        font-family:century gothic;\n"
 "        font-size:24px;\n"
@@ -44,7 +48,8 @@ public:
 "\n"
 "QDialog#Login2\n"
 "{\n"
-"	 background:url(L:/UNI/Projects/Project one/Grind/Project/QT/data/images/Car_Background_Login_00.png);\n"
+"\n"
+"	background-image: url(:/res/data/images/Car_Background_Login_00.png);\n"
 "}\n"
 "\n"
 "QFrame#frame23\n"
@@ -104,6 +109,7 @@ public:
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         lineEdit_2->setGeometry(QRect(80, 260, 261, 31));
         lineEdit_2->setStyleSheet(QString::fromUtf8(""));
+        lineEdit_2->setEchoMode(QLineEdit::Password);
         pushButton_2 = new QPushButton(frame23);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(20, 370, 371, 21));
@@ -113,6 +119,8 @@ public:
         label_2 = new QLabel(frame23);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(80, 80, 231, 51));
+        label_2->setAlignment(Qt::AlignCenter);
+        label_2->setWordWrap(true);
 
         retranslateUi(Login2);
 
@@ -121,7 +129,7 @@ public:
 
     void retranslateUi(QDialog *Login2)
     {
-        Login2->setWindowTitle(QCoreApplication::translate("Login2", "Dialog", nullptr));
+        Login2->setWindowTitle(QCoreApplication::translate("Login2", "Log-In", nullptr));
         label->setText(QCoreApplication::translate("Login2", "LOGIN", nullptr));
         pushButton->setText(QCoreApplication::translate("Login2", "Sign In", nullptr));
         lineEdit->setText(QString());

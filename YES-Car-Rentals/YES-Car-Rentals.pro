@@ -14,19 +14,25 @@ SOURCES += \
     central.cpp \
     central2.cpp \
     central_addcars.cpp \
+    central_myrentals.cpp \
+    central_selectedcar.cpp \
     central_viewcars1.cpp \
     centraladmin.cpp \
+    centraladmin_rentrequest.cpp \
     centraladmin_viewcars.cpp \
     centraladmin_viewclients.cpp \
     deletecarwindow.cpp \
     deleteclientwindow.cpp \
+    deleterentalwindow.cpp \
     editcarwindow.cpp \
     editclientwindow.cpp \
+    editrentalwindow.cpp \
     logcommand.cpp \
     login2.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    rentcarwindow.cpp \
     signup.cpp
 
 HEADERS += \
@@ -36,36 +42,48 @@ HEADERS += \
     central.h \
     central2.h \
     central_addcars.h \
+    central_myrentals.h \
+    central_selectedcar.h \
     central_viewcars1.h \
     centraladmin.h \
+    centraladmin_rentrequest.h \
     centraladmin_viewcars.h \
     centraladmin_viewclients.h \
     deletecarwindow.h \
     deleteclientwindow.h \
+    deleterentalwindow.h \
     editcarwindow.h \
     editclientwindow.h \
+    editrentalwindow.h \
     logcommand.h \
     login2.h \
     loginwindow.h \
     mainwindow.h \
+    rentcarwindow.h \
     signup.h
 
 FORMS += \
     central.ui \
     central2.ui \
     central_addcars.ui \
+    central_myrentals.ui \
+    central_selectedcar.ui \
     central_viewcars1.ui \
     centraladmin.ui \
+    centraladmin_rentrequest.ui \
     centraladmin_viewcars.ui \
     centraladmin_viewclients.ui \
     deletecarwindow.ui \
     deleteclientwindow.ui \
+    deleterentalwindow.ui \
     editcarwindow.ui \
     editclientwindow.ui \
+    editrentalwindow.ui \
     logcommand.ui \
     login2.ui \
     loginwindow.ui \
     mainwindow.ui \
+    rentcarwindow.ui \
     signup.ui
 
 # Default rules for deployment.

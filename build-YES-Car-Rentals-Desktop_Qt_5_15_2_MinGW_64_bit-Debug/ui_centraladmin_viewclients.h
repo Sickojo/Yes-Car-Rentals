@@ -10,6 +10,7 @@
 #define UI_CENTRALADMIN_VIEWCLIENTS_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -17,7 +18,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableWidget>
-#include <QtWidgets/QToolButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -28,19 +28,23 @@ public:
     QLabel *label;
     QPushButton *AddCars;
     QPushButton *EditCars;
-    QToolButton *toolButton;
-    QToolButton *toolButton_2;
     QLabel *label_3;
     QPushButton *HomeButton;
     QPushButton *MyAccount;
     QPushButton *ViewClients;
+    QPushButton *Rental;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLabel *label_9;
+    QPushButton *signout;
     QFrame *frame_2;
     QLabel *label_2;
     QPushButton *Close;
     QLabel *label_4;
     QTableWidget *tableWidgetClients;
     QPushButton *LoadClientsButton;
-    QLabel *Testlbl;
     QPushButton *EditClientButton;
     QPushButton *DeleteClientButton;
 
@@ -49,6 +53,9 @@ public:
         if (CentralAdmin_ViewClients->objectName().isEmpty())
             CentralAdmin_ViewClients->setObjectName(QString::fromUtf8("CentralAdmin_ViewClients"));
         CentralAdmin_ViewClients->resize(1071, 620);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/images/Loko.png"), QSize(), QIcon::Normal, QIcon::Off);
+        CentralAdmin_ViewClients->setWindowIcon(icon);
         CentralAdmin_ViewClients->setStyleSheet(QString::fromUtf8(""));
         frame = new QFrame(CentralAdmin_ViewClients);
         frame->setObjectName(QString::fromUtf8("frame"));
@@ -65,7 +72,7 @@ public:
 "        color:#ffffff;\n"
 "}\n"
 "\n"
-"QPushButton#HomeButton:hover, QPushButton#AddCars:hover,  QPushButton#EditCars:hover, QPushButton#MyAccount:hover, QPushButton#ViewClients:hover\n"
+"QPushButton#HomeButton:hover, QPushButton#AddCars:hover,  QPushButton#EditCars:hover, QPushButton#MyAccount:hover, QPushButton#ViewClients:hover,QPushButton#Rental:hover,QPushButton#signout:hover\n"
 "{\n"
 "        font-size:15px;\n"
 "        background:#222;\n"
@@ -81,7 +88,7 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(0, 332, 20, 37));
+        label->setGeometry(QRect(0, 330, 19, 35));
         label->setStyleSheet(QString::fromUtf8("background:#5F0000;"));
         AddCars = new QPushButton(frame);
         AddCars->setObjectName(QString::fromUtf8("AddCars"));
@@ -89,45 +96,65 @@ public:
         EditCars = new QPushButton(frame);
         EditCars->setObjectName(QString::fromUtf8("EditCars"));
         EditCars->setGeometry(QRect(0, 250, 251, 41));
-        toolButton = new QToolButton(frame);
-        toolButton->setObjectName(QString::fromUtf8("toolButton"));
-        toolButton->setGeometry(QRect(10, 580, 26, 20));
-        toolButton_2 = new QToolButton(frame);
-        toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
-        toolButton_2->setGeometry(QRect(10, 20, 31, 21));
-        toolButton_2->setStyleSheet(QString::fromUtf8("border-image:url(L:/UNI/Projects/Project one/Grind/Project/QT/data/icons/home.png)0 0 0 0 stretch stretch;"));
         label_3 = new QLabel(frame);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 90, 41, 31));
+        label_3->setGeometry(QRect(20, 90, 35, 35));
         HomeButton = new QPushButton(frame);
         HomeButton->setObjectName(QString::fromUtf8("HomeButton"));
         HomeButton->setGeometry(QRect(0, 90, 251, 41));
         MyAccount = new QPushButton(frame);
         MyAccount->setObjectName(QString::fromUtf8("MyAccount"));
-        MyAccount->setGeometry(QRect(0, 410, 251, 41));
+        MyAccount->setGeometry(QRect(0, 490, 251, 41));
         ViewClients = new QPushButton(frame);
         ViewClients->setObjectName(QString::fromUtf8("ViewClients"));
         ViewClients->setGeometry(QRect(0, 330, 251, 41));
+        Rental = new QPushButton(frame);
+        Rental->setObjectName(QString::fromUtf8("Rental"));
+        Rental->setGeometry(QRect(0, 410, 251, 41));
+        label_5 = new QLabel(frame);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(20, 170, 35, 35));
+        label_6 = new QLabel(frame);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(20, 250, 35, 35));
+        label_7 = new QLabel(frame);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(20, 330, 35, 35));
+        label_8 = new QLabel(frame);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(20, 410, 35, 35));
+        label_9 = new QLabel(frame);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(20, 490, 35, 35));
+        signout = new QPushButton(frame);
+        signout->setObjectName(QString::fromUtf8("signout"));
+        signout->setGeometry(QRect(10, 590, 80, 21));
+        Rental->raise();
         AddCars->raise();
         EditCars->raise();
-        toolButton->raise();
-        toolButton_2->raise();
         HomeButton->raise();
         label_3->raise();
         MyAccount->raise();
         ViewClients->raise();
         label->raise();
+        label_5->raise();
+        label_6->raise();
+        label_7->raise();
+        label_8->raise();
+        label_9->raise();
+        signout->raise();
         frame_2 = new QFrame(CentralAdmin_ViewClients);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
         frame_2->setGeometry(QRect(250, 0, 821, 621));
-        frame_2->setStyleSheet(QString::fromUtf8("QPushButton#LoadClientsButton\n"
+        frame_2->setStyleSheet(QString::fromUtf8("QPushButton#LoadClientsButton,QPushButton#EditClientButton,QPushButton#DeleteClientButton\n"
 "{\n"
-"	color:black;\n"
+"	color:white;\n"
+"	background-color:#333;\n"
 "}\n"
 "\n"
-"QPushButton#LoadClientsButton:hover\n"
+"QPushButton#LoadClientsButton:hover,QPushButton#EditClientButton:hover,QPushButton#DeleteClientButton:hover\n"
 "{\n"
-"	color:black;\n"
+"	color:white;\n"
 "}\n"
 "\n"
 ""));
@@ -179,16 +206,16 @@ public:
         LoadClientsButton = new QPushButton(frame_2);
         LoadClientsButton->setObjectName(QString::fromUtf8("LoadClientsButton"));
         LoadClientsButton->setGeometry(QRect(60, 90, 131, 31));
-        Testlbl = new QLabel(frame_2);
-        Testlbl->setObjectName(QString::fromUtf8("Testlbl"));
-        Testlbl->setGeometry(QRect(270, 95, 271, 21));
-        Testlbl->setStyleSheet(QString::fromUtf8("color:black;"));
         EditClientButton = new QPushButton(frame_2);
         EditClientButton->setObjectName(QString::fromUtf8("EditClientButton"));
         EditClientButton->setGeometry(QRect(690, 90, 80, 21));
+        EditClientButton->setStyleSheet(QString::fromUtf8("	font-size:11px;\n"
+""));
         DeleteClientButton = new QPushButton(frame_2);
         DeleteClientButton->setObjectName(QString::fromUtf8("DeleteClientButton"));
         DeleteClientButton->setGeometry(QRect(690, 60, 80, 21));
+        DeleteClientButton->setStyleSheet(QString::fromUtf8("	font-size:11px;\n"
+""));
 
         retranslateUi(CentralAdmin_ViewClients);
 
@@ -197,16 +224,21 @@ public:
 
     void retranslateUi(QDialog *CentralAdmin_ViewClients)
     {
-        CentralAdmin_ViewClients->setWindowTitle(QCoreApplication::translate("CentralAdmin_ViewClients", "Dialog", nullptr));
+        CentralAdmin_ViewClients->setWindowTitle(QCoreApplication::translate("CentralAdmin_ViewClients", "View Clients", nullptr));
         label->setText(QString());
         AddCars->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Add Cars", nullptr));
         EditCars->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Edit Cars", nullptr));
-        toolButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "...", nullptr));
-        toolButton_2->setText(QString());
         label_3->setText(QString());
         HomeButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Home", nullptr));
         MyAccount->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "My Account", nullptr));
         ViewClients->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "View Clients", nullptr));
+        Rental->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Rental Requests", nullptr));
+        label_5->setText(QString());
+        label_6->setText(QString());
+        label_7->setText(QString());
+        label_8->setText(QString());
+        label_9->setText(QString());
+        signout->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "sign out", nullptr));
         label_2->setText(QString());
         Close->setText(QString());
         label_4->setText(QString());
@@ -217,7 +249,6 @@ public:
         QTableWidgetItem *___qtablewidgetitem2 = tableWidgetClients->horizontalHeaderItem(2);
         ___qtablewidgetitem2->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "AdminStatus", nullptr));
         LoadClientsButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Load Data", nullptr));
-        Testlbl->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "...", nullptr));
         EditClientButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Edit a Client", nullptr));
         DeleteClientButton->setText(QCoreApplication::translate("CentralAdmin_ViewClients", "Delete a Client", nullptr));
     } // retranslateUi

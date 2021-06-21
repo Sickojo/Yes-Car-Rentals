@@ -4,7 +4,7 @@
 #include <cstring>
 #include <fstream>
 #include <unordered_map>
-
+#include<QString>
 using namespace std;
 
 void read(string Filename);
@@ -36,6 +36,8 @@ void readClient(string Filename);
 bool ChangeClient(string Filename, int id, string name);
 bool Login1(string username, string  password);
 bool SignUp(string Filename, Client newClient);
+bool IsSPace(QString username,QString password);
+string GetClientName(int ID);
 
 
 string hasher(string pass);

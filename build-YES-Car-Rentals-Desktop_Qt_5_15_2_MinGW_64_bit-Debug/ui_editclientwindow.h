@@ -10,6 +10,7 @@
 #define UI_EDITCLIENTWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -33,12 +34,17 @@ public:
     QPushButton *changeCarButt;
     QLabel *enterINewName_2;
     QRadioButton *rb2;
+    QLabel *label;
+    QLabel *label_2;
 
     void setupUi(QDialog *EditClientWindow)
     {
         if (EditClientWindow->objectName().isEmpty())
             EditClientWindow->setObjectName(QString::fromUtf8("EditClientWindow"));
-        EditClientWindow->resize(434, 422);
+        EditClientWindow->resize(421, 455);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/icons/clients.png"), QSize(), QIcon::Normal, QIcon::Off);
+        EditClientWindow->setWindowIcon(icon);
         EditClientWindow->setStyleSheet(QString::fromUtf8("QDialog#EditCarWindow\n"
 "{\n"
 "        color:333;\n"
@@ -113,19 +119,30 @@ public:
         frameEditCar->setFrameShadow(QFrame::Raised);
         changeCarlbl = new QLabel(frameEditCar);
         changeCarlbl->setObjectName(QString::fromUtf8("changeCarlbl"));
-        changeCarlbl->setGeometry(QRect(140, 20, 151, 31));
+        changeCarlbl->setGeometry(QRect(130, 10, 151, 31));
         rb1 = new QRadioButton(frameEditCar);
         rb1->setObjectName(QString::fromUtf8("rb1"));
         rb1->setGeometry(QRect(50, 260, 191, 19));
         changeCarButt = new QPushButton(frameEditCar);
         changeCarButt->setObjectName(QString::fromUtf8("changeCarButt"));
-        changeCarButt->setGeometry(QRect(80, 320, 271, 21));
+        changeCarButt->setGeometry(QRect(70, 320, 271, 21));
         enterINewName_2 = new QLabel(frameEditCar);
         enterINewName_2->setObjectName(QString::fromUtf8("enterINewName_2"));
         enterINewName_2->setGeometry(QRect(50, 230, 291, 21));
         rb2 = new QRadioButton(frameEditCar);
         rb2->setObjectName(QString::fromUtf8("rb2"));
         rb2->setGeometry(QRect(240, 260, 191, 19));
+        label = new QLabel(frameEditCar);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(270, 160, 91, 21));
+        label->setStyleSheet(QString::fromUtf8("font-size:11px;\n"
+"color :red;"));
+        label_2 = new QLabel(frameEditCar);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(140, 40, 121, 41));
+        label_2->setStyleSheet(QString::fromUtf8("	font-size:10px;\n"
+""));
+        label_2->setScaledContents(true);
         frameEditCar->raise();
         enterIDlbl->raise();
         IDLineEdit->raise();
@@ -139,7 +156,7 @@ public:
 
     void retranslateUi(QDialog *EditClientWindow)
     {
-        EditClientWindow->setWindowTitle(QCoreApplication::translate("EditClientWindow", "Dialog", nullptr));
+        EditClientWindow->setWindowTitle(QCoreApplication::translate("EditClientWindow", "Edit Client", nullptr));
         enterIDlbl->setText(QCoreApplication::translate("EditClientWindow", "  Enter the ID of the Client you wish to change :", nullptr));
         enterINewName->setText(QCoreApplication::translate("EditClientWindow", "  Enter the new name of the Client :", nullptr));
         changeCarlbl->setText(QCoreApplication::translate("EditClientWindow", "  Change Client", nullptr));
@@ -147,6 +164,8 @@ public:
         changeCarButt->setText(QCoreApplication::translate("EditClientWindow", "Change Client", nullptr));
         enterINewName_2->setText(QCoreApplication::translate("EditClientWindow", "Choose wether or not to make this Client an Admin", nullptr));
         rb2->setText(QCoreApplication::translate("EditClientWindow", "Make Client", nullptr));
+        label->setText(QString());
+        label_2->setText(QCoreApplication::translate("EditClientWindow", "Leave blank if unchanged", nullptr));
     } // retranslateUi
 
 };

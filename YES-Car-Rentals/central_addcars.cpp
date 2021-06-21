@@ -5,6 +5,11 @@
 #include "CarsData.h"
 #include "QFileDialog"
 #include "QIntValidator"
+#include<centraladmin_viewcars.h>
+#include<centraladmin_viewclients.h>
+#include<login2.h>
+#include<QDesktopWidget>
+#include<centraladmin_rentrequest.h>
 
 Car car;
 
@@ -14,6 +19,31 @@ Central_AddCars::Central_AddCars(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+    int w = ui->label_3->width();
+    int h = ui->label_3->height();
+    int w4 = ui->Close->width();
+    int h4 = ui->Close->height();
+
+    QPixmap pixb1(":/res/data/icons/home.png");
+    ui->label_3->setPixmap(pixb1.scaled(w, h, Qt::KeepAspectRatio));
+    QPixmap pixb2(":/res/data/icons/whiteRent.png");
+    ui->label_4->setPixmap(pixb2.scaled(w, h, Qt::KeepAspectRatio));
+    QPixmap pixb3(":/res/data/icons/cars.jpg");
+    ui->label_5->setPixmap(pixb3.scaled(w, h, Qt::KeepAspectRatio));
+    QPixmap pixb4(":/res/data/icons/clients.png");
+    ui->label_6->setPixmap(pixb4.scaled(w, h, Qt::KeepAspectRatio));
+    QPixmap pixb5(":/res/data/icons/whiteRentals.png");
+    ui->label_7->setPixmap(pixb5.scaled(w, h, Qt::KeepAspectRatio));
+    QPixmap pixb6(":/res/data/icons/Acc.png");
+    ui->label_8->setPixmap(pixb6.scaled(w, h, Qt::KeepAspectRatio));
+
+    QPixmap pix4(":/res/data/icons/cancel.png");
+    ui->Close->setAutoFillBackground(true);
+    ui->Close->setFlat(true);
+    ui->Close->setIcon(pix4);
+    ui->Close->setIconSize(QSize(w4,h4));
+
+
     ui->CarModelLineEdite->setMaxLength(30);
     ui->CarBrandLineEdit->setMaxLength(30);
 
@@ -38,8 +68,10 @@ void Central_AddCars::mouseMoveEvent(QMouseEvent *event) {
 void Central_AddCars::on_HomeButton_clicked()
 {
     CentralAdmin *nw = new CentralAdmin(this);
+    close();
+    nw->move(QApplication::desktop()->rect().center()-nw->rect().center());
     nw->show();
-    hide();
+
 }
 
 void Central_AddCars::on_BrowseImages_clicked()
@@ -55,7 +87,7 @@ void Central_AddCars::on_BrowseImages_clicked()
         {
             image = image.scaledToWidth(ui->CarDisplay->width(), Qt::SmoothTransformation);
             ui->CarDisplay->setPixmap(QPixmap::fromImage(image));
-            strcpy(car.ImPath, filename.toStdString().c_str());
+            qstrcpy(car.ImPath, filename.toStdString().c_str());
         }
     }
 }
@@ -100,9 +132,9 @@ void Central_AddCars::on_AddCarButton_clicked()
         ui->DescriptWarning->setText("");
         ui->PriceWarning->setText("");
 
-        strcpy(car.name, ui->CarModelLineEdite->text().toStdString().c_str());
-        strcpy(car.brand, ui->CarBrandLineEdit->text().toStdString().c_str());
-        strcpy(car.Discript, ui->TextEditDescript->toPlainText().toStdString().c_str());
+        qstrcpy(car.name, ui->CarModelLineEdite->text().toStdString().c_str());
+        qstrcpy(car.brand, ui->CarBrandLineEdit->text().toStdString().c_str());
+        qstrcpy(car.Discript, ui->TextEditDescript->toPlainText().toStdString().c_str());
         car.price = ui->CarPriceLineEdit->text().toInt();
 
         fstream f(Cars, ios::in | ios::out | ios::binary);
@@ -113,25 +145,18 @@ void Central_AddCars::on_AddCarButton_clicked()
         string input;
         while(f.read((char *)&tmp, sizeof (tmp)))
         {
+            string temp = tmp.name;
+            string temp2 = car.name;
 
-              if(tmp.id == car.id)
-             {
+            if(temp == temp2)
+            {
+                ui->WarningLbl->setText("There is already a car with this name !!");
                 Can_Add = false;
-                ui->WarningLbl->setText("There is a car with this ID");
                 break;
-             }
-              string temp = tmp.name;
-              string temp2 = car.name;
+            }
 
-              if(temp == temp2)
-              {
-                  ui->WarningLbl->setText("There is already a car with this name !!");
-                  Can_Add = false;
-                  break;
-              }
-
-        idcounter ++;
-        idcounter2 = tmp.id;
+            idcounter ++;
+            idcounter2 = tmp.id;
         }
 
 
@@ -144,4 +169,38 @@ void Central_AddCars::on_AddCarButton_clicked()
         f.close();
         file.close();
     }
+    strcpy(car.ImPath,"");
+}
+
+void Central_AddCars::on_EditCars_clicked()
+{
+    CentralAdmin_ViewCars *nw =new CentralAdmin_ViewCars(this);
+    close();
+    nw->move(QApplication::desktop()->rect().center()-nw->rect().center());
+    nw->show();
+}
+
+void Central_AddCars::on_ViewClients_clicked()
+{
+    CentralAdmin_ViewClients *nw =new CentralAdmin_ViewClients(this);
+    close();
+    nw->move(QApplication::desktop()->rect().center()-nw->rect().center());
+    nw->show();
+}
+
+
+void Central_AddCars::on_signout_clicked()
+{
+    Login2 *nw = new Login2(this);
+    close();
+    nw->move(QApplication::desktop()->rect().center()-nw->rect().center());
+    nw->show();
+}
+
+void Central_AddCars::on_Rental_clicked()
+{
+    CentralAdmin_RentRequest *nw = new CentralAdmin_RentRequest(this);
+    close();
+    nw->move(QApplication::desktop()->rect().center()-nw->rect().center());
+    nw->show();
 }

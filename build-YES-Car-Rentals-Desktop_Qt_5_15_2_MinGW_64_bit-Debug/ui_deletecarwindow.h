@@ -10,6 +10,7 @@
 #define UI_DELETECARWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -33,6 +34,9 @@ public:
         if (DeleteCarWindow->objectName().isEmpty())
             DeleteCarWindow->setObjectName(QString::fromUtf8("DeleteCarWindow"));
         DeleteCarWindow->resize(421, 242);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/icons/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        DeleteCarWindow->setWindowIcon(icon);
         DeleteCarWindow->setStyleSheet(QString::fromUtf8("QDialog#DeleteCarWindow\n"
 "{\n"
 "	color:#333;\n"
@@ -108,7 +112,7 @@ public:
 
     void retranslateUi(QDialog *DeleteCarWindow)
     {
-        DeleteCarWindow->setWindowTitle(QCoreApplication::translate("DeleteCarWindow", "Dialog", nullptr));
+        DeleteCarWindow->setWindowTitle(QCoreApplication::translate("DeleteCarWindow", "Delete Car", nullptr));
         DltCarId->setText(QCoreApplication::translate("DeleteCarWindow", "Enter the ID of the car you wish to delete:", nullptr));
         DltCarButton->setText(QCoreApplication::translate("DeleteCarWindow", "Delete Car", nullptr));
         DltCarlbl->setText(QCoreApplication::translate("DeleteCarWindow", "   Delete a Car", nullptr));

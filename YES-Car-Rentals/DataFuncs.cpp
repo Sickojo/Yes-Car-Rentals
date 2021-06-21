@@ -1,9 +1,12 @@
 #include "CarsData.h"
 #include "ClientData.h"
-
+#include<QString>
 string Cars = "Cars.yes";
 string Clients = "Clients.yes";
 Client currentClient;
+Car SelectedCar;
+string currentCarName;
+
 
 string hasher(string pass1){
     //salts the password by adding different strings to it depending on it's size
@@ -28,9 +31,9 @@ string hasher(string pass1){
 Car::Car(string _name,string _discript,string _brand, int _price)
 {
 
-    strcpy(name, _name.c_str());
-    strcpy(Discript, _discript.c_str());
-    strcpy(brand, _brand.c_str());
+    qstrcpy(name, _name.c_str());
+    qstrcpy(Discript, _discript.c_str());
+    qstrcpy(brand, _brand.c_str());
     price = _price;
 }
 
@@ -43,8 +46,8 @@ void Car::print_table_Cars()
 Client::Client(string _name, string _pass)
 {
     //_pass = hasher(_pass);
-    strcpy(name, _name.c_str());
-    strcpy(pass, _pass.c_str());
+    qstrcpy(name, _name.c_str());
+    qstrcpy(pass, _pass.c_str());
     this->Is_Admin = false;
 }
 
@@ -131,9 +134,9 @@ bool Change(string Filename, int id, string name, int newprice)
     {
           if(tmp.id == id)
          {
-          Is_found == true;
+          Is_found = true;
 
-          strcpy(tmp.name, name.c_str());
+          qstrcpy(tmp.name, name.c_str());
 
           tmp.price = newprice;
 
@@ -251,13 +254,13 @@ bool SignUp(string Filename, Client newClient)
 
           }
 
-    idcounter ++;
+    idcounter = tmp.id;
     }
 
 
     if(Can_Add)
     {
-        newClient.id = idcounter;
+        newClient.id = idcounter+1;
 
         file.write((char* )&newClient, sizeof(newClient));
     }
@@ -266,6 +269,17 @@ bool SignUp(string Filename, Client newClient)
 
     return Can_Add;
 
+}
+bool IsSPace(QString usr,QString pass){
+    for(int i=0,j=0;(i<usr.length()),j<pass.length();i++,j++){
+        if(usr[i]==" "){
+            return true;
+        }
+        else if(pass[j]==" "){
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -312,9 +326,9 @@ bool ChangeClient(string Filename, int id, string name)
     {
           if(tmp.id == id)
          {
-          Is_found == true;
+          Is_found = true;
 
-          strcpy(tmp.name, name.c_str());
+          qstrcpy(tmp.name, name.c_str());
 
 
 
@@ -326,4 +340,49 @@ bool ChangeClient(string Filename, int id, string name)
          }
     }
        return Is_found;
+}
+Car FindCar(int ID)
+{
+    ifstream f(Cars, ios::binary);
+    Car tmp;
+    Car result;
+    while(f.read((char *) &tmp, sizeof(tmp)))
+    {
+        if(tmp.id == ID)
+        {
+            result = tmp;
+        }
+    }
+    f.close();
+    return result;
+}
+
+Car FindCar(string CarName)
+{
+    ifstream f(Cars, ios::binary);
+    Car tmp;
+    Car result;
+    while(f.read((char *) &tmp, sizeof(tmp)))
+    {
+        if(tmp.name == CarName)
+        {
+            result = tmp;
+        }
+    }
+    f.close();
+    return result;
+}
+string GetClientName(int ID)
+{
+    ifstream f(Clients, ios::binary);
+    string name;
+    Client tmp;
+
+    while(f.read((char *) &tmp, sizeof(tmp)))
+    {
+        if(tmp.id == ID)
+            name = tmp.name;
+    }
+    f.close();
+    return name;
 }

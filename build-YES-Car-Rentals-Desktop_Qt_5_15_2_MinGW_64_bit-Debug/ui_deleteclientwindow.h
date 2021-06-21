@@ -10,6 +10,7 @@
 #define UI_DELETECLIENTWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
@@ -33,6 +34,9 @@ public:
         if (DeleteClientWindow->objectName().isEmpty())
             DeleteClientWindow->setObjectName(QString::fromUtf8("DeleteClientWindow"));
         DeleteClientWindow->resize(421, 242);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/data/icons/clients.png"), QSize(), QIcon::Normal, QIcon::Off);
+        DeleteClientWindow->setWindowIcon(icon);
         DeleteClientWindow->setStyleSheet(QString::fromUtf8("QDialog#DeleteCarWindow\n"
 "{\n"
 "        color:#333;\n"
@@ -108,7 +112,7 @@ public:
 
     void retranslateUi(QDialog *DeleteClientWindow)
     {
-        DeleteClientWindow->setWindowTitle(QCoreApplication::translate("DeleteClientWindow", "Dialog", nullptr));
+        DeleteClientWindow->setWindowTitle(QCoreApplication::translate("DeleteClientWindow", "Delete Client", nullptr));
         DltCarId->setText(QCoreApplication::translate("DeleteClientWindow", "Enter the ID of the client you wish to delete:", nullptr));
         DltCarButton->setText(QCoreApplication::translate("DeleteClientWindow", "Delete Client", nullptr));
         DltCarlbl->setText(QCoreApplication::translate("DeleteClientWindow", "   Delete a Client", nullptr));

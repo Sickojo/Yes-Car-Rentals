@@ -28,6 +28,12 @@ private slots:
 
     void on_HomeButton_clicked();
 
+    void on_ViewClients_clicked();
+
+    void on_signout_clicked();
+
+    void on_Rental_clicked();
+
 private:
     Ui::CentralAdmin_ViewCars *ui;
     void mousePressEvent(QMouseEvent *event);

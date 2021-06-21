@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
-    <height>422</height>
+    <width>421</width>
+    <height>455</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit Client</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Resources.qrc">
+    <normaloff>:/res/data/icons/clients.png</normaloff>:/res/data/icons/clients.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog#EditCarWindow
@@ -133,8 +137,8 @@ QRadioButton
    <widget class="QLabel" name="changeCarlbl">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>20</y>
+      <x>130</x>
+      <y>10</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -159,7 +163,7 @@ QRadioButton
    <widget class="QPushButton" name="changeCarButt">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>70</x>
       <y>320</y>
       <width>271</width>
       <height>21</height>
@@ -195,6 +199,43 @@ QRadioButton
      <string>Make Client</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>160</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:11px;
+color :red;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>40</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	font-size:10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Leave blank if unchanged</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <zorder>frameEditCar</zorder>
   <zorder>enterIDlbl</zorder>
@@ -202,6 +243,8 @@ QRadioButton
   <zorder>enterINewName</zorder>
   <zorder>CarNewNameLineEdit</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

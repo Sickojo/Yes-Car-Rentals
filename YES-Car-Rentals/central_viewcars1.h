@@ -24,6 +24,12 @@ private slots:
 
     void on_MyRentals_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_RentCar_clicked();
+
+    void on_signout_clicked();
+
 private:
     Ui::central_viewcars1 *ui;
     void mousePressEvent(QMouseEvent *event);

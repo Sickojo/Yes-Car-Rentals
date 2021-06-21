@@ -18,9 +18,12 @@ public:
 private slots:
     void on_pushButton_4_clicked();
 
-    void on_pushButton_5_clicked();
 
     void on_RentCar_clicked();
+
+    void on_MyRentals_clicked();
+
+    void on_signout_clicked();
 
 private:
     Ui::Central *ui;
